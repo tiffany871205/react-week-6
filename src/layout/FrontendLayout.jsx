@@ -20,6 +20,16 @@ function FrontendLayout() {
               購物車
             </Link>
           </li>
+          <li className="nav-item">
+            <Link className="nav-link nav-item" aria-current="page" to="/checkout">
+              購物頁面
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link className="nav-link nav-item" aria-current="page" to="/login">
+              登入頁面
+            </Link>
+          </li>
         </ul>
       </header>
       <main>
