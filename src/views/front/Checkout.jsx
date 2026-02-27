@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { ThreeDots } from "react-loader-spinner";
 import * as bootstrap from "bootstrap";
 import SingleProductModal from "../../components/SingleProductModal";
+import { emailValidation } from "../../utils/validation";
 
 const API_BASE = import.meta.env.VITE_API_BASE;
 const API_PATH = import.meta.env.VITE_API_PATH;
@@ -283,13 +284,7 @@ function Checkout() {
               type="email"
               className="form-control"
               placeholder="請輸入 Email"
-              {...register("email", {
-                required: "Email 為必填",
-                pattern: {
-                  value: /^\S+@\S+$/i,
-                  message: "Email 格式不正確",
-                },
-              })}
+              {...register("email", emailValidation)}
             />
             {errors.email && <p className="text-danger">{errors.email.message}</p>}
           </div>
